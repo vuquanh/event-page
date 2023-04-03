@@ -1,21 +1,23 @@
-import React from 'react'
-import {container, footer, row} from "react-bootstrap"
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Footer = () => {
   return (
-   <header>
-    <Navbar bg="dark" variant="dark" expand="lg"
-    collapseOnSelect>
+      <header>
+       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-            <Navbar.brand href ="/">MyShop</Navbar.brand>
-            <Navbar.toggle aria-controls="basic-navbar-nav" />
-            <Navbar.collapse id="basic-narbar-nav">
-                <Nav.link href="/cart"></Nav.link>
-            </Navbar.collapse>
+          <Navbar.Brand href="/">Qmess Shop</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-narbar-nav">
+            <Nav className="ms-auto">
+            <Nav.Link href="/cart"><i class="fa-solid fa-cart-plus"></i>Cart</Nav.Link>
+            <Nav.Link href="/login"><i class="fa-regular fa-user"></i>Log In</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
-    </Navbar>
-    </div>
-  )
-}
+       </Navbar>
+      </header>
+  );
+};
 
-export default Footer
+export default Footer;
