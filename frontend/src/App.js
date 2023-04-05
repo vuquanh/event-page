@@ -9,10 +9,9 @@ const App = () => {
      <Header />
       <main>
         <Container>
-          <h1>Welcome to Qmess Shop!</h1>
+          <h1>Welcome to Team 2 Event Page!</h1>
         </Container>
       </main>
-
       <Footer />
     </>
   );

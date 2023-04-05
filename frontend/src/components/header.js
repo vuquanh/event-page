@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-const Footer = () => {
+const Header = () => {
   return (
       <header>
        <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Navbar.Brand href="/">Qmess Shop</Navbar.Brand>
+          <Navbar.Brand href="/">Team 2 Event Page</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-narbar-nav">
             <Nav className="ms-auto">
@@ -20,4 +20,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Header;
