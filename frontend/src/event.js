@@ -1,4 +1,4 @@
-const events = [
+const event = [
     {
         _id: '1',
         name: 'Seattle Tech Career Fair: Exclusive Tech Hiring Event',
@@ -72,3 +72,5 @@ const events = [
         fee: 100
       }
 ]
+
+export default event
