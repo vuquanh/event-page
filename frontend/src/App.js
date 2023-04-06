@@ -11,6 +11,7 @@ const App = () => {
         <Container>
           <h1>Welcome to Team 2 Event Page!</h1>
         </Container>
+        <div id="spacer"></div>
         <Footer />
       </main>
     </>

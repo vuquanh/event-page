@@ -13,5 +13,20 @@ code {
 }
 
 main {
-  min-height: 80vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#logo {
+  height: 75px;
+}
+
+#spacer {
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #3e3f3a;
+  color: #d8d8d8;
 }
