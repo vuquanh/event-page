@@ -3,13 +3,14 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Event = ({event}) => {
+  // console.log('Event.js:', event)
   return (
     <Card className='my-3 p-3 rounded'>
-    {/* <Link to={`/product/${event._id}`}>
+     <Link to={`/events/${event._id}`}> 
       <Card.Img src={event.image} variant='top' />
-    </Link> */}
+    </Link>
     <Card.Body>
-      <Link to={`/event/${event._id}`}>
+      <Link to={`/events/${event._id}`}>
         <Card.Title as='div'>
           <strong>{event.name}</strong>
         </Card.Title>
