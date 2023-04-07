@@ -2,7 +2,7 @@ const events = [
     {
         _id: '1',
         name: 'Seattle Tech Career Fair: Exclusive Tech Hiring Event',
-        image: '',
+        image: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%…%2C2160%2C1080&s=e8c127ef500040ab50bbaa4de6d95e0b',
         date_Time: 'Friday, April 21 · 9am - 12pm PDT',
         location: 'Moved to Virtual Event Online Seattle, WA 98101',
         description: 'We will be hosting a Tech Career Fair with our hiring partners from fast growing startups and Fortune 500 companies in technology.  There will be a focus on helping companies achieve their diversity and inclusivity initiative with more diverse candidates to their talent pool.',

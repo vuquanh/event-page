@@ -6,11 +6,11 @@ const Event = ({event}) => {
   // console.log('Event.js:', event)
   return (
     <Card className='my-3 p-3 rounded'>
-     <Link to={`/events/${event._id}`}> 
+     <Link to={`/event/${event._id}`}> 
       <Card.Img src={event.image} variant='top' />
     </Link>
     <Card.Body>
-      <Link to={`/events/${event._id}`}>
+      <Link to={`/event/${event._id}`}>
         <Card.Title as='div'>
           <strong>{event.name}</strong>
         </Card.Title>

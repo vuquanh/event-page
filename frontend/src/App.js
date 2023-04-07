@@ -13,15 +13,13 @@ const App = () => {
         <Header />
         <main>
           <Container>
-            <HomeScreen />
             <Routes>
               <Route path="/" element={<HomeScreen />} exact />
-              <Route path="/events/:id" element={<EventScreen />} />
+              <Route path="/event/:id" element={<EventScreen />} />
             </Routes>
           </Container>
-          {/* <div id="spacer"></div> */}
-          <Footer />
         </main>
+        <Footer />
       </Router>
     </>
   );
