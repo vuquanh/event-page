@@ -11,22 +11,22 @@ const Event = ({event}) => {
     </Link>
     <Card.Body>
       <Link to={`/event/${event._id}`}>
-        <Card.Title as='div'>
+        <Card.Title as='h2'>
           <strong>{event.name}</strong>
         </Card.Title>
       </Link>
-      <Card.Text as='div'>
-      <p>{event.date_Time}</p>
+      <Card.Text as='h3'>
+      <strong>{event.date_Time}</strong>
+      </Card.Text>
+
+      <Card.Text as='h4'>
       <p>{event.location}</p>
       </Card.Text>
 
-      <Card.Text as='p'>
-        {event.description}
-      </Card.Text>
-
-
-      <Card.Text as='h3'>
-        ${event.fee}
+      <Card.Text as='h5'>
+        <strong>{event.company}</strong>
+      <br />
+      Starts at ${event.fee}
       </Card.Text>
     </Card.Body>
   </Card>

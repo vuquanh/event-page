@@ -24,22 +24,8 @@ const EventScreen = () => {
           <ListGroup.Item>Date: {event.date_Time}</ListGroup.Item>
           <ListGroup.Item>Location: {event.location}</ListGroup.Item>
           <ListGroup.Item>Fee: ${event.fee}</ListGroup.Item>
-          <ListGroup.Item>Description: {event.description}</ListGroup.Item>
+          <ListGroup.Item>Company: {event.description}</ListGroup.Item>
         </ListGroup>
-      </Col>  
-      <Col md={3}>
-        <Card>
-          <ListGroup variant='flush'>
-            <ListGroup.Item>
-              <Row>
-                <Col>Fee:</Col>
-                <Col>
-                  <strong>${event.fee}</strong>
-                </Col>
-              </Row>
-            </ListGroup.Item>
-          </ListGroup>
-        </Card>
       </Col>                     
     </Row>  
   </>
