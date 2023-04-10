@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 import HomeScreen from "./screens/HomeScreen";
 import EventScreen from "./screens/EventScreen";
 
+
 const App = () => {
   return (
     <>
@@ -19,6 +20,12 @@ const App = () => {
             </Routes>
           </Container>
         </main>
+
+       
+        <Container>
+          <h1>Welcome to Team 2 Event Page!</h1>
+        </Container>
+        <div id="spacer"></div>
         <Footer />
       </Router>
     </>
