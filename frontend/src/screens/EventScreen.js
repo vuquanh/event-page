@@ -15,6 +15,7 @@ const EventScreen = () => {
     <Row>
       <Col md={6}>
         <Image src={event.image} alt={event.name} fluid />
+        <p style={{marginTop: "20px"}}><strong>Description:</strong> {event.description}</p>
       </Col> 
       <Col md={3}>
         <ListGroup variant='flush'>
@@ -24,10 +25,11 @@ const EventScreen = () => {
           <ListGroup.Item>Date: {event.date_Time}</ListGroup.Item>
           <ListGroup.Item>Location: {event.location}</ListGroup.Item>
           <ListGroup.Item>Fee: ${event.fee}</ListGroup.Item>
-          <ListGroup.Item>Company: {event.description}</ListGroup.Item>
+          <ListGroup.Item>Company: {event.company}</ListGroup.Item>
         </ListGroup>
       </Col>                     
     </Row>  
+
   </>
   )
 }
