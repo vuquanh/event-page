@@ -55,3 +55,7 @@ footer {
   margin: 20px;
 }
 
+.card-height {
+  min-height: 410px;
+ 
+}
