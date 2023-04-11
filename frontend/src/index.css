@@ -15,18 +15,69 @@ code {
 main {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: center;
+  background-color: rgb(230, 230, 230);
 }
 
-#logo {
-  height: 75px;
+.carousel {
+  min-height: 20vh;
 }
+
+h2{
+  color: rgb(66, 66, 105);
+}
+
+h3{
+  color: #e95420;
+}
+
+.eventScreen-EventName {
+  color: #e95420;
+  font-weight: bold;
+}
+
+h4{
+  color: #808096;
+}
+
+
+#logo {
+  height: 50px;
+  margin-left: -10px;
+}
+
 
 #spacer {
   flex-grow: 1;
 }
 
 footer {
-  background-color: #3e3f3a;
-  color: #d8d8d8;
+  background-color: #e95420;
+  color: white;
 }
+
+.carousel-container {
+  margin: 20px;
+}
+
+.card-height {
+  min-height: 410px;
+  position: relative;
+  /* flex: 0 0 auto;
+  display: flex;
+  flex-direction: column; */
+
+}
+
+.event-cardBadge {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-color: #e95420;
+  color: white;
+  padding: 3px 3px;
+  border-radius: 8px;
+  font-weight: bold;
+
+}
+

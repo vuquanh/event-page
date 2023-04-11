@@ -5,9 +5,9 @@ import { Col, Container, Row } from "react-bootstrap";
 const Footer = () => {
   return (
     <footer>
-    <Container>
+    <Container >
       <Row>
-        <Col className="text-center py-3">Copyright &copy; 2023 Eventbrite</Col>
+        <Col className="text-center py-3 ">Copyright &copy; 2023 Eventlite</Col>
       </Row>
     </Container>
   </footer>
