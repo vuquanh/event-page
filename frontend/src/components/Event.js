@@ -31,6 +31,7 @@ const Event = ({event}) => {
       <p>{event.location}</p>
       </Card.Text>
 
+
       <Card.Text as='h5'>
         <strong>{event.company}</strong>
       <br />
