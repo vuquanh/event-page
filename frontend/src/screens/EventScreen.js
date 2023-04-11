@@ -9,7 +9,7 @@ const EventScreen = () => {
   // console.log('EventScreen:', eventItem)
   return (
     <>
-    <Link className='btn btn-light my-3' to='/'>
+    <Link className='btn btn-outline-danger my-3 ' to='/'>
       Go Back
     </Link>  
     <Row>
