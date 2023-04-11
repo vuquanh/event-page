@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {  Container } from "react-bootstrap";
 import HomeScreen from "./screens/HomeScreen";
 import EventScreen from "./screens/EventScreen";
-import Brand from "./components/brand";
+
 
 
 const App = () => {
