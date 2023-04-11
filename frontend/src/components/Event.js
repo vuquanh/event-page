@@ -3,10 +3,18 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Event = ({event}) => {
-  // console.log('Event.js:', event)
+    let badgeText
+    if (event.openSpots <= 5) {
+      badgeText = "A Few Spots Left!"
+    } else if (event.fee === 0) {
+      badgeText = "FREE"
+    }
+
+
   return (
     <Card className='my-3 p-3 rounded card-height'>
      <Link to={`/event/${event._id}`}> 
+    {badgeText && <div className='event-cardBadge'>{badgeText}</div>}
       <Card.Img src={event.image} variant='top' />
     </Link>
     <Card.Body>

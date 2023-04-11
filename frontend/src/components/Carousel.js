@@ -8,7 +8,7 @@ function CarouselFadeExample({ items }) {
   return (
     <Carousel fade className="carousel-container">
       {items.map((item) => (
-        
+  
         <Carousel.Item>
             <Link to={`/event/${item._id}`}> 
           <img
