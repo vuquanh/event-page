@@ -1,12 +1,12 @@
 const events = [
     {
         _id: '1',
-        name: 'Seattle Tech Career Fair: Exclusive Tech Hiring Event',
+        name: 'Columbia City Night Market',
         image: '/images/1.png',
-        date_Time: 'Friday, April 21 · 9am - 12pm PDT',
-        location: 'Moved to Virtual Event Online Seattle, WA 98101',
-        company: 'Tech Career Fair',
-        description: 'We will be hosting a Tech Career Fair with our hiring partners from fast growing startups and Fortune 500 companies in technology.  There will be a focus on helping companies achieve their diversity and inclusivity initiative with more diverse candidates to their talent pool.',
+        date_Time: 'Friday, April 30 · 9am - 12pm PDT',
+        location: 'Columbia City 3702 S Hudson St Seattle, WA 98118',
+        company: 'Peace Peloton',
+        description: 'The COLUMBIA CITY NIGHT MARKET promotes a fun and inclusive shopping experience that introduces the unique artistic stylings of makers, creators, and performing artists to our community. Supporting businesses with Black owners, local artisans, and promoting fun and outdoor activity, the market has tripled in size since its launch in December 2020, attracting thousands to the Columbia City neighborhood and establishing itself as a Destination of Choice in Seattle.',
         fee: 0,
         openSpots: 35
           },
@@ -29,7 +29,7 @@ const events = [
         location: 'Lynnwood Event Center 3711 196th Street Southwest Lynnwood, WA 98036',
         company: 'Lynnwood Recruiting Services',
         description: 'The City of Lynnwood, Lynnwood Chamber of Commerce, Edmonds College, and WorkSource have partnered to bring together the top employers in Lynnwood and Snohomish County. Meet with prospective employers and have face-to-face interviews on-site!',
-        fee: 45,
+        fee: 0,
         openSpots: 152
       },
       {
