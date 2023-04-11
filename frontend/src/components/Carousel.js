@@ -14,7 +14,7 @@ function CarouselFadeExample({ items }) {
           <img
             className="d-block w-100"
             src={`/images/${item._id}.png`}
-            alt={`${item.name} image`}
+            alt={`${item.name}`}
             style={{borderRadius: "20px"}}
           />
           </ Link>
