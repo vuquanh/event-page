@@ -20,7 +20,7 @@ const EventScreen = () => {
       <Col md={3}>
         <ListGroup variant='flush'>
           <ListGroup.Item>
-            <h3>{event.name}</h3>
+            <h2 className='eventScreen-EventName'>{event.name}</h2>
           </ListGroup.Item>
           <ListGroup.Item>Date: {event.date_Time}</ListGroup.Item>
           <ListGroup.Item>Location: {event.location}</ListGroup.Item>

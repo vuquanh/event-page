@@ -31,6 +31,11 @@ h3{
   color: #e95420;
 }
 
+.eventScreen-EventName {
+  color: #e95420;
+  font-weight: bold;
+}
+
 h4{
   color: #808096;
 }
