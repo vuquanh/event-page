@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/header";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Carousel, Container } from "react-bootstrap";
+import {  Container } from "react-bootstrap";
 import HomeScreen from "./screens/HomeScreen";
 import EventScreen from "./screens/EventScreen";
 import Brand from "./components/brand";
@@ -15,7 +15,6 @@ const App = () => {
         <Header />
         <main>
           <Container>
-            <Carousel />
             <Routes>
               <Route path="/" element={<HomeScreen />} exact />
               <Route path="/event/:id" element={<EventScreen />} />
