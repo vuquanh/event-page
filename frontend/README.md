@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+A video demonstration of Team 2's website can be viewed at https://youtu.be/-XUmOGuDFQc. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
