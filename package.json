@@ -1,0 +1,22 @@
+{
+  "name": "event-page",
+  "version": "1.0.0",
+  "description": "MERN event app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vuquanh/event-page.git"
+  },
+  "author": "Kal Academy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuquanh/event-page/issues"
+  },
+  "homepage": "https://github.com/vuquanh/event-page#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
