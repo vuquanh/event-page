@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { Col, Row } from "react-bootstrap";
 import axios from 'axios';
 import Event from "../components/Event";
@@ -6,8 +6,16 @@ import Carousel from "../components/Carousel";
 
 
 const HomeScreen = () => {
-  
-  return (
+  const[events, setEvents] = useState([])
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const {data} = await axios.get('/api/events')
+      setEvents(data)
+    }
+    fetchEvents()
+  })
+  return(
     <>
         <Carousel items = {events}/>
 
