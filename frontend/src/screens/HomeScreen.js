@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Col, Row } from "react-bootstrap";
-import events from "../events";
+import axios from 'axios';
 import Event from "../components/Event";
 import Carousel from "../components/Carousel";
 
+
 const HomeScreen = () => {
+  useEffect(() => {
+    const fetchEvents = () => {
+        const {data} = axios.get('/api/events') 
+    }
+  })
   return (
     <>
         <Carousel items = {events}/>
