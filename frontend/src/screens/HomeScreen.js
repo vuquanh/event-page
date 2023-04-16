@@ -6,11 +6,7 @@ import Carousel from "../components/Carousel";
 
 
 const HomeScreen = () => {
-  useEffect(() => {
-    const fetchEvents = () => {
-        const {data} = axios.get('/api/events') 
-    }
-  })
+  
   return (
     <>
         <Carousel items = {events}/>
