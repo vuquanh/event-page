@@ -15,6 +15,7 @@ const HomeScreen = () => {
     }
     fetchEvents()
   })
+  
   return(
     <>
         <Carousel items = {events}/>

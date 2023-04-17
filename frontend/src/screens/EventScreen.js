@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import {Row, Col, Image, Card, ListGroup} from 'react-bootstrap'
-import events from '../events'
+import axios from 'axios'
 
 const EventScreen = () => {
     const params = useParams();
-    const event = events.find(e => e._id === params.id)
-  // console.log('EventScreen:', eventItem)
+    const [event, setEvent] = useState({})
+
+    useEffect(() => {
+      const fetchEvent = async () => {
+        const {data} = await axios.get(`/api/event/${params.id}`);
+        setEvent(data)
+      }
+      fetchEvent();
+    })
+
   return (
     <>
     <Link className='btn btn-outline-danger my-3 ' to='/'>
