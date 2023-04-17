@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "MERN event app",
   "main": "server.js",
+  "type": "module",
+
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
@@ -21,6 +23,7 @@
   "homepage": "https://github.com/vuquanh/event-page#readme",
   "dependencies": {
     "concurrently": "^8.0.1",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "nodemon": "^2.0.22"
   }

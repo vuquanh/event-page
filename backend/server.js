@@ -1,5 +1,5 @@
-const express = require('express');
-const events = require ('./data/events')
+import express from 'express';
+import events from './data/events.js'
 
 const app = express();
 app.get('/api/events', (req, res) => {
