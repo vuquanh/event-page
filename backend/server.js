@@ -1,5 +1,6 @@
-const express = require('express');
-const events = require ('./data/events')
+import express from 'express';
+// Don't forget to add ".js" when importing files in the backend. 
+import events from './data/events.js'
 
 const app = express();
 app.get('/api/events', (req, res) => {
