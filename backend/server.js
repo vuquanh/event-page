@@ -1,4 +1,5 @@
 import express from 'express';
+// Don't forget to add ".js" when importing files in the backend. 
 import events from './data/events.js'
 
 const app = express();
