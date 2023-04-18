@@ -1,8 +1,16 @@
+//everything we create in the backend needs to be connected here similar to how components in the front end are connected to the app.js file
+
 import express from 'express';
 // Don't forget to add ".js" when importing files in the backend. 
-import events from './data/events.js'
+import dotenv from 'dotenv';
+import events from './data/events.js';
+import connectDB from './config/db.js';
 
-const app = express();
+
+const app = express(); //as soon as server runs, this starts first
+dotenv.config() //this command lets us have access to .env file
+connectDB() //this will connect to database and will print out the host if there is a successful connection. test with npm run dev
+
 app.get('/api/events', (req, res) => {
     res.json(events)
 }) 
