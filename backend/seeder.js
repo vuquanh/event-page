@@ -46,7 +46,7 @@ const destroyData = async () => {
   }
 };
 
-//argv stands for argument vector. process.argv is a coomand for node.js.
+//argv stands for argument vector. process.argv is a command for node.js.
 // "data:destroy": "node backend/seeder.js -d" --- "node" is index 0,  "backend/seeder.js" is index 1,  "-d" is index 2
 // If there is an index 2 and the value at index 2 is equal to '-d', then the destroyData function will be executed. Otherwise, the importData function will be executed.
 if(process.argv[2] === '-d') { 
