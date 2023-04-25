@@ -28,7 +28,9 @@ const Event = ({event}) => {
       </Card.Text>
 
       <Card.Text as='h4'>
-      <p>{event.location}</p>
+      { event.location.name && <p style={{marginBottom:0, fontWeight: 'bold'}}>{event.location.name}: </p>}
+       <p>{`${event.location.street},
+        ${event.location.city} ${event.location.state}`} </p>
       </Card.Text>
 
 
