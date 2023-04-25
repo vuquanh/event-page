@@ -29,7 +29,7 @@ const importData = async () => {
     process.exit();
   } catch (error) {
     console.error(`Error: ${error.message}`);
-    process.exit(1); //?? check later
+    process.exit(1); 
   }
 };
 
