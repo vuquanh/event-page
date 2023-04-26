@@ -55,11 +55,11 @@ const eventSchema = mongoose.Schema(
       required: true,
     },
     fee: {
-      type: number,
+      type: Number,
       required: true,
     },
     openSpots: {
-      type: number,
+      type: Number,
     },
   },
   {

@@ -9,7 +9,7 @@ const EventScreen = () => {
 
     useEffect(() => {
       const fetchEvent = async () => {
-        const {data} = await axios.get(`/api/event/${params.id}`);
+        const {data} = await axios.get(`/api/events/${params.id}`);
         // console.log('EventScreenFetchData:', data)
     
         setEvent(data)
@@ -35,7 +35,7 @@ const EventScreen = () => {
             <h2 className='eventScreen-EventName'>{event.name}</h2>
           </ListGroup.Item>
           <ListGroup.Item>Date: {event.date_Time} </ListGroup.Item>
-          {/* had to add ? so it can show the name of the evnet for some reason... */}
+          {/* had to add ? so it can show the name of the event for some reason... */}
           <ListGroup.Item>
             <p style={{marginBottom:0}}>Address:</p>
             <strong>{event.location?.name}</strong>
