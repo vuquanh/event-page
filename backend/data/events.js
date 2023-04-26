@@ -1,6 +1,5 @@
 const events = [
   {
-    _id: "1",
     name: "Columbia City Night Market",
     image: "/images/1.png",
     date_Time: "Friday, April 30 · 9am - 12pm PDT",
@@ -18,7 +17,6 @@ const events = [
     openSpots: 35,
   },
   {
-    _id: "2",
     name: "Dope Culture Events Presents: The Comedy Shop",
     image: "/images/2.png",
     date_Time: "Starts on Saturday, April 22 · 7pm PDT",
@@ -36,7 +34,6 @@ const events = [
     openSpots: 2,
   },
   {
-    _id: "3",
     name: "Lynnwood Regional Job Fair",
     image: "/images/3.png",
     date_Time: "Thursday, May 11 · 4 - 7pm PDT",
@@ -54,7 +51,6 @@ const events = [
     openSpots: 152,
   },
   {
-    _id: "4",
     name: "Lambapalooza",
     image: "/images/4.png",
     date_Time: "Saturday, April 15 · 10am - 3pm PDT",
@@ -72,7 +68,6 @@ const events = [
     openSpots: 33,
   },
   {
-    _id: "5",
     name: "2023 Seattle Mom Prom",
     image: "/images/5.png",
     date_Time: "May 20 · 8pm - May 21 · 12am PDT",
@@ -90,7 +85,6 @@ const events = [
     openSpots: 25,
   },
   {
-    _id: "6",
     name: "WRG Presents Wreckno",
     image: "/images/6.png",
     date_Time: "April 28 · 9pm - April 29 · 2am PDT",
@@ -108,7 +102,6 @@ const events = [
     openSpots: 46,
   },
   {
-    _id: "7",
     name: "Dungeons and Drag Queens!",
     image: "/images/7.png",
     date_Time: "Friday, April 28 · 8 - 10pm PDT",
@@ -126,7 +119,6 @@ const events = [
     openSpots: 38,
   },
   {
-    _id: "8",
     name: "DDD Seattle w/ TRUTH, Bukez Finezt, Wraz, Woven Thorns",
     image: "/images/8.png",
     date_Time: "Friday, April 28 · 9pm PDT",
