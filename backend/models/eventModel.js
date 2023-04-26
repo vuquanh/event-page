@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const AddressSchema = mongoose.Schema({
   user: {
     type:mongoose.Schema.Types.ObjectID,
-    ref:'users',
+    ref:'user',
     required: true
   },
   name: {

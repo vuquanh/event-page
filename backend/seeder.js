@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
 import events from "./data/events.js";
-//import users sample data later
+import users from "./data/users.js"
 import Event from "./models/eventModel.js";
-//import User model later
+import User from "./models/userModel.js"
+
 
 import connectDB from "./config/db.js";
 
