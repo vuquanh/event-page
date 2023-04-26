@@ -145,4 +145,6 @@ const events = [
   },
 ];
 
-export default events;
+export default events
+
+//module.exports = events //this is for the javascript world

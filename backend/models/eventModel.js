@@ -21,10 +21,10 @@ const AddressSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  zip: {
-    type: number,
-    required: true,
-  }
+    zip: {
+      type: Number,
+      required: true,
+    }
 });
 
 const eventSchema = mongoose.Schema(
@@ -55,11 +55,11 @@ const eventSchema = mongoose.Schema(
       required: true,
     },
     fee: {
-      type: number,
+      type: Number,
       required: true,
     },
     openSpots: {
-      type: number,
+      type: Number,
     },
   },
   {
@@ -69,5 +69,5 @@ const eventSchema = mongoose.Schema(
 
 const Event = mongoose.model("events", eventSchema); 
 export default Event;
-//Event is for the name we use in this application but "evnets" is the name of database in MongoDB. 
+//Event is for the name we use in this application but "events" is the name of database in MongoDB. 
 //const "name for this project file" = mongoose.model("the name for collection in MongoDB", eventSchema)
