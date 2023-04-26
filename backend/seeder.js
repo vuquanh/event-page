@@ -11,7 +11,7 @@ connectDB(); //this will connect to database and will print out the host if ther
 
 const importData = async () => {
   try {
-    //we are deleting existing data in MongoDB first before insering new ones.
+    //we are deleting existing data in MongoDB first before inserting new ones.
     //when deleting data, you need to delete the child data first which is Event in this case.
     await Event.deleteMany();
     await User.deleteMany();
@@ -52,5 +52,5 @@ const destroyData = async () => {
 if(process.argv[2] === '-d') { 
     destroyData();
 } else {
-    importData();
+    importData(); 
 }
