@@ -22,7 +22,7 @@ const importData = async () => {
 
     // adding 'user:adminUser' to each object in the events sample data by using map function.
     const sampleEvents = events.map((event) => {
-      return { ...events, user: adminUser };
+      return { ...event, user: adminUser };
     });
 
     await Event.insertMany(sampleEvents);
