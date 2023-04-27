@@ -1,8 +1,11 @@
 import dotenv from "dotenv";
 import users from './data/users.js'
 import events from "./data/events.js";
-import Events from "./models/eventModel.js";
-import Users from "./models/userModel.js"
+import users from "./data/users.js"
+import Event from "./models/eventModel.js";
+import User from "./models/userModel.js"
+
+
 import connectDB from "./config/db.js";
 
 dotenv.config(); //this command lets us have access to .env file
@@ -20,7 +23,7 @@ const importData = async () => {
 
     // adding 'user:adminUser' to each object in the events sample data by using map function.
     const sampleEvents = events.map((event) => {
-      return { ...events, user: adminUser };
+      return { ...event, user: adminUser };
     });
 
     await Event.insertMany(sampleEvents);

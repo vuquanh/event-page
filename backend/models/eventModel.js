@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const AddressSchema = mongoose.Schema({
-  user: {
-    type:mongoose.Schema.Types.ObjectID,
-    ref:'users',
-    required: true
-  },
   name: {
     type: String,
   },
@@ -21,14 +16,18 @@ const AddressSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-    zip: {
+  zipcode: {
       type: Number,
       required: true,
     }
-});
+  });
 
-const eventSchema = mongoose.Schema(
-  {
+const eventSchema = mongoose.Schema({
+  user: {
+    type:mongoose.Schema.Types.ObjectID,
+    ref:'users',
+    required: true
+  },
     name: {
       type: String,
       required: true,
@@ -36,9 +35,9 @@ const eventSchema = mongoose.Schema(
     image: {
       type: String,
       required: true,
+    
     },
-    dateTime: {
-      //I will change the date type from String to Date later.
+    date_Time: {
       type: String,
       required: true,
     },
@@ -46,17 +45,19 @@ const eventSchema = mongoose.Schema(
       type: AddressSchema,
       required: true,
     },
-    description: {
+    company: {
       type: String,
       required: true,
+      default: ''
     },
-    company: {
+    description: {
       type: String,
       required: true,
     },
     fee: {
       type: Number,
       required: true,
+      default: 0
     },
     openSpots: {
       type: Number,
