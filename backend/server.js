@@ -3,7 +3,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 //import events from './data/events.js';// Don't forget to add ".js" when importing files in the backend. Goes away when we connect to API
-import productRoutes from '/.routes/productRoutes';
+import productRoutes from '/.routes/productRoutes.js';
 import connectDB from './config/db.js';
 
 
