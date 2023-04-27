@@ -67,7 +67,7 @@ const eventSchema = mongoose.Schema(
   }
 );
 
-const Event = mongoose.model("events", eventSchema); 
-export default Event;
+const Events = mongoose.model("events", eventSchema); 
+export default Events;
 //Event is for the name we use in this application but "events" is the name of database in MongoDB. 
 //const "name for this project file" = mongoose.model("the name for collection in MongoDB", eventSchema)
