@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom';
 
 
 function CarouselFadeExample({ items }) {
-  console.log("Carousel Items:", items);
+  // console.log("Carousel Items:", items);
 
   return (
     <Carousel fade className="carousel-container">
       {items.map((item) => (
   
         <Carousel.Item>
-            <Link to={`/event/${item._id}`}> 
+         
+            <Link to={`/event/${item._id}`}>  
           <img
             className="d-block w-100"
-            src={`/images/${item._id}.png`}
+            
+            src={item.image}  // changed here 
             alt={`${item.name}`}
             style={{borderRadius: "20px"}}
           />
