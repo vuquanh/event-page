@@ -14,7 +14,8 @@ router.get('/:id', asyncHandler(async(req, res) => {
     if (event) {
     res.json(event)
   } else {
-    res.status(404).json({message: 'Event not found'})
+    res.status(404)
+    throw new Error('Product not found')
   } 
 }))
 
