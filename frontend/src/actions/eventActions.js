@@ -6,10 +6,12 @@ import { EVENT_LIST_REQUEST,
     EVENT_DETAILS_REQUEST,
     EVENT_DETAILS_SUCCESS 
 } from "../constants/eventConstants"
-export const listEvent = () => async (dispatch) => {
+
+
+export const listEvents = () => async (dispatch) => {
     try {
         dispatch ({type: EVENT_LIST_REQUEST})
-        const {data} = await axios.get ('/api/events')
+        const {data} = await axios.get('/api/events')
         dispatch ({
             type: EVENT_LIST_SUCCESS,
             payload: data

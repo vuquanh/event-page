@@ -11,6 +11,7 @@ import Message from "../components/Message";
 
 
 const HomeScreen = () => {
+
   const dispatch = useDispatch();
   const eventList = useSelector((state) => state.eventList);
   // console.log('state', eventList)
