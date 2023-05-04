@@ -16,4 +16,17 @@ export const eventListReducer = (state = {events: []}, action) => {
     default:
       return state
   }
-}    
+}  
+
+export const eventDetailsReducer = (state = {event: {reviews: []}}, action) => {
+    switch(action.type){
+      case EVENT_DETAILS_REQUEST:
+        return {loading: true, ...state}
+      case EVENT_DETAILS_SUCCESS:
+        return {loading: false, event: action.payload}
+      case EVENT_DETAILS_FAIL:
+        return {loading: false, error: action.payload}
+      default:
+        return state    
+    }
+  }
