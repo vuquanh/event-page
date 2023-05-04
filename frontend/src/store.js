@@ -7,9 +7,21 @@ const rootReducer = combineReducers({
 
 }) 
 
+//getting 'cartItems' data from the localStorage and convert it into JSON file. 
+const cartItemFromStorage = localStorage.getItem('cartItems')
+? JSON.parse(localStorage.getItem('cartItems'))
+: []
+
+const initialState = {
+    cart: {
+        cartItems: cartItemFromStorage
+        
+    }
+}
+
 const store = configureStore({
     reducer: rootReducer,
-    preloadState: {} 
+    preloadState: {initialState} 
 })
 
 export default store 
