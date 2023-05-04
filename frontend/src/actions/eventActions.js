@@ -7,7 +7,6 @@ import { EVENT_LIST_REQUEST,
     EVENT_DETAILS_SUCCESS 
 } from "../constants/eventConstants"
 
-
 export const listEvents = () => async (dispatch) => {
     try {
         dispatch ({type: EVENT_LIST_REQUEST})
