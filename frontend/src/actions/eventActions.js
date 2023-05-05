@@ -10,7 +10,7 @@ import { EVENT_LIST_REQUEST,
 export const listEvents = () => async (dispatch) => {
     try {
         dispatch ({type: EVENT_LIST_REQUEST})
-        const {data} = await axios.get ('/api/events')
+        const {data} = await axios.get('/api/events')
         dispatch ({
             type: EVENT_LIST_SUCCESS,
             payload: data
