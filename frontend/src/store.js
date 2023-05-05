@@ -1,27 +1,26 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
-import {eventListReducer,eventDetailsReducer} from './reducers/eventReducers'
+import { eventListReducer, eventDetailsReducer } from './reducers/eventReducers';
+import { cartReducer } from './reducers/cartReducers';
 
-const rootReducer = combineReducers({
+
+
+const rootReducer =  combineReducers({
     eventList: eventListReducer,
-    eventDetails: eventDetailsReducer
-
+    eventDetails: eventDetailsReducer,
+    cart: cartReducer
 }) 
 
-//getting 'cartItems' data from the localStorage and convert it into JSON file. 
-const cartItemFromStorage = localStorage.getItem('cartItems')
-? JSON.parse(localStorage.getItem('cartItems'))
+const cartItemFromStorage = localStorage.getItem
+('cartItems')? JSON.parse(localStorage.getItem('cartItems'))
 : []
 
 const initialState = {
-    cart: {
-        cartItems: cartItemFromStorage
-        
-    }
+    cart: {cartItems: cartItemFromStorage}
 }
 
 const store = configureStore({
     reducer: rootReducer,
-    preloadState: {initialState} 
+    preloadState: initialState
 })
 
-export default store 
+export default store

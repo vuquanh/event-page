@@ -14,10 +14,12 @@ const CartScreen = () => {
 
   const eventId = params.id;
 
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1
+  const qty = location.search ? Number(location.search.split("=")[1]) : 1;
+  console.log('qty:', qty)
 
-  const cart = useSelector((state) => state.cart)
-  const {cartItems} = cart
+  const cart = useSelector((state) => state.cart);
+ 
+  const { cartItems } = cart;
 
   useEffect(() => {
     if(eventId) {
@@ -25,7 +27,7 @@ const CartScreen = () => {
     }
   }, [dispatch, eventId, qty])
 
-  const removeFromCartHandler = () => {
+  const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
   }
 
@@ -38,7 +40,7 @@ const CartScreen = () => {
     <Row>
       <Col md={8}>
     <h1>Shopping Cart</h1>
-    {cartItem.length === 0? (
+    {cartItems.length === 0? (
       <Message>
         Your cart is empty <Link to="/">Go Back</Link>
       </Message>
@@ -59,21 +61,54 @@ const CartScreen = () => {
                 as='select'
                 value={item.qty}
                 onChange={(e) => 
-                dispatch(AddToCart(item.evnet, Number(e.target.value)))
+                dispatch(addToCart(item.event, Number(e.target.value)))
                 }
                 >
-                  ----------------------------------
+                  {[...Array(item.openSpots).keys()].map((x) => (
+                    <option key={x + 1} value={x + 1}>
+                      {x + 1}
+                    </option>
+                  ))
+                }
                 </Form.Control>
+              </Col>
+              <Col md={2}>
+                <Button 
+                  type="button"
+                  variant='light'
+                  onClick={() => removeFromCartHandler(item.event)}
+                  >
+                    <i className="fas fa-trash"></i>
+                  </Button>
               </Col>
             </Row>
           </ListGroup.Item>
         ))}
-
-
       </ListGroup>
     )
-
     }
+      </Col>
+      <Col md={4}>
+        <Card>
+          <ListGroup.Item>
+            <h2>
+              Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+              items
+            </h2>
+            $ 
+            {cartItems.reduce((acc, item) => (acc + item.qty) * item.fee, 0).toFixed(2)}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <Button
+              type='button'
+              className='btn-block'
+              disabled={cartItems.length === 0}
+              onClick={checkoutHandler}
+              >
+                Proceed To Checkout
+              </Button>
+          </ListGroup.Item>
+        </Card>
       </Col>
     </Row>
   )
