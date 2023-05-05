@@ -2,20 +2,17 @@
 
 import express from 'express';
 import dotenv from 'dotenv';
-import productRoutes from './routes/productRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
 import connectDB from './config/db.js';
-import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+import errorHandler from './middleware/errorMiddleware.js';
 
 const app = express(); //as soon as server runs, this starts first
 dotenv.config() //this command lets us have access to .env file
 connectDB() //this will connect to database and will print out the host if there is a successful connection. test with npm run dev
 
 //here
-app.use('/api/events', productRoutes) // this says anytime you see products in a url, go to productRoutes.
+app.use('/api/events', eventRoutes)
 
-app.use('/api/events', productRoutes)
-app.use(notFound)
 app.use(errorHandler)
+app.listen(5000, console.log('server is running on port 5000'))
 
-const PORT = process.env.PORT || 5000
-app.listen(PORT, console.log(`Server is running on port ${PORT}`));
