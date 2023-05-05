@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row} from 'react-bootstrap';
 import {listEvents} from '../actions/eventActions';
 import Event from "../components/Event";
 import Loader from '../components/Loader';
 import Message from '../components/message';
+import Carousel from "../components/Carousel";
+ 
 
 
 
@@ -19,7 +21,7 @@ const HomeScreen = () => {
   
   return (
     <>
-  
+  <Carousel items={events} />
         
         <h1> Events Near You </h1>
         {loading ? (<Loader />)

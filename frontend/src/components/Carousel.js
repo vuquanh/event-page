@@ -1,4 +1,4 @@
-import Carousel from "react-bootstrap/Carousel";
+import Carousel from "react-bootstrap/Carousel"
 import { Link } from 'react-router-dom';
 
 
@@ -9,7 +9,7 @@ function CarouselFadeExample({ items }) {
     <Carousel fade className="carousel-container">
       {items.map((item) => (
   
-        <Carousel.Item>
+        <Carousel.Item key={item._id}>
          
             <Link to={`/event/${item._id}`}>  
           <img
