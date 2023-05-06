@@ -84,12 +84,13 @@ const EventScreen = () => {
                     >
                       {[...Array(event.openSpots).keys()].map((x) => {
                         console.log(...Array(event.openSpots).keys());
-
+                        if(x < 15){
                         return (
                           <option key={x + 1} value={x + 1}>
                             {x + 1}
                           </option>
                         );
+                      }
                       })}
                     </Form.Control>
                   </Col>
