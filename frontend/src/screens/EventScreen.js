@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import {Link, useParams} from 'react-router-dom'
+import React, {useEffect, useState } from 'react'
+import {Link, useParams, useNavigate} from 'react-router-dom'
 import {Row, Col, Image, Card, ListGroup, Form} from 'react-bootstrap'
 
 //For Redux
@@ -41,7 +40,7 @@ const EventScreen = () => {
                   <Image src={event.image} alt={event.name} fluid />
                   <p style={{marginTop: "20px"}}><strong>Description:</strong> {event.description}</p>
                 </Col> 
-                {product.openSpots > 0 && (
+                {event.openSpots > 0 && (
 
 <ListGroup.Item>
   <Row>
@@ -53,7 +52,7 @@ const EventScreen = () => {
         onChange={e => setQty(e.target.value)}  
       >
           {
-            [...Array(product.openSpots).keys()].map(x => (
+            [...Array(event.openSpots).keys()].map(x => (
               <option key={x+1} value={x+1}>
                 {x+1}
               </option>
