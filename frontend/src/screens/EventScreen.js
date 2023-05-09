@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import {Link, useParams, useNavigate} from 'react-router-dom'
-import {Row, Col, Image, Card, ListGroup, Form} from 'react-bootstrap'
+import {Row, Col, Image, Button, ListGroup, Form} from 'react-bootstrap'
 
 //For Redux
 import { useDispatch,useSelector } from 'react-redux'
@@ -30,9 +30,7 @@ const EventScreen = () => {
     <Link className='btn btn-outline-danger my-3 ' to='/'>
       Go Back
     </Link> 
-
-
-    {loading? (<Loader />)
+     {loading? (<Loader />)
               : error? 
               (<Message variant="danger">{error}</Message>)
               : (    <Row>
@@ -58,8 +56,19 @@ const EventScreen = () => {
               </option>
             ))
           }
-
       </Form.Control>
+    
+                <Button
+                  className='btn-block'
+                  type='button'
+                  disabled={event.openSpots === 0}
+                  onClick={addToCartHandler}
+                >
+                  Add To Cart
+                </Button>
+
+  
+
     </Col>
   </Row>
 </ListGroup.Item>

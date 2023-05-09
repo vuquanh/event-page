@@ -71,6 +71,7 @@ const CartScreen = () => {
                   ))
                 }
                 </Form.Control>
+    
               </Col>
               <Col md={2}>
                 <Button 
@@ -87,6 +88,11 @@ const CartScreen = () => {
       </ListGroup>
     )
     }
+    <Row>
+                <Link className='btn btn-outline-danger my-3 ' to='/'>
+      Home
+    </Link> 
+    </Row>
       </Col>
       <Col md={4}>
         <Card>
