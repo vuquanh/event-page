@@ -35,6 +35,10 @@ const CartScreen = () => {
     navigate('/login?redirect=shipping')
   }
 
+  const goBackHandler = () => {
+    navigate(-1)
+  }
+
 
   return (
     <Row>
@@ -45,7 +49,7 @@ const CartScreen = () => {
         Your cart is empty <Link to="/">Go Back</Link>
       </Message>
     ): (
-      <ListGroup variant='flush'>
+      <ListGroup variant='flush' className=''>
         {cartItems.map((item) => (
           <ListGroup.Item key={item.event}>
             <Row>
@@ -89,23 +93,44 @@ const CartScreen = () => {
     )
     }
     <Row>
-                <Link className='btn btn-outline-danger my-3 ' to='/'>
-      Home
-    </Link> 
+      <Col>
+    <Button  className='mt-4 p-2'  type='button' onClick={goBackHandler}> 
+      Go Back
+    </Button> 
+    </Col>
     </Row>
       </Col>
-      <Col md={4}>
-        <Card>
+      <Col md={4} className='d-flex align-items-center justify-content-center'>
+         <Card className='w-100 h-90 d-inline-block p-3'>
           <ListGroup.Item>
             <h2>
               Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
               items
             </h2>
             $ 
-            {cartItems.reduce((acc, item) => (acc + item.qty) * item.fee, 0).toFixed(2)}
+            {cartItems.reduce((acc, item) => acc + item.qty * item.fee, 0).toFixed(2)}
           </ListGroup.Item>
           <ListGroup.Item>
             <Button
+              type='button'
+              className='btn-block mt-2'
+              disabled={cartItems.length === 0}
+              onClick={checkoutHandler}
+              >
+                Proceed To Checkout
+              </Button>
+          </ListGroup.Item>
+        </Card> 
+
+{/* <Card>
+      <Card.Header as="h3"> Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+              items</Card.Header>
+      <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>
+          With supporting text below as a natural lead-in to additional content.
+        </Card.Text>
+        <Button
               type='button'
               className='btn-block'
               disabled={cartItems.length === 0}
@@ -113,8 +138,9 @@ const CartScreen = () => {
               >
                 Proceed To Checkout
               </Button>
-          </ListGroup.Item>
-        </Card>
+      </Card.Body>
+    </Card> */}
+
       </Col>
     </Row>
   )
