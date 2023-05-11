@@ -35,10 +35,6 @@ const CartScreen = () => {
     navigate('/login?redirect=shipping')
   }
 
-  const goBackHandler = () => {
-    navigate(-1)
-  }
-
 
   return (
     <Row>
@@ -94,7 +90,7 @@ const CartScreen = () => {
     }
     <Row>
       <Col>
-    <Button  className='mt-4 p-2'  type='button' onClick={goBackHandler}> 
+    <Button  className='mt-4 p-2'  type='button' onClick={() => navigate(-1)}> 
       Go Back
     </Button> 
     </Col>
