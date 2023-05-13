@@ -3,8 +3,6 @@ import { protect } from '../middleware/authMiddleware.js'
 import { authUser, getUserProfile } from '../controllers/userController.js'
 
 
-
-
 const router = express.Router()
 
 
