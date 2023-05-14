@@ -9,6 +9,7 @@ import CartScreen from "./screens/CartScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import LoginScreen from "./screens/LoginScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               <Route path="/event/:id" element={<EventScreen />} />
               <Route path="/cart/:id" element={<CartScreen />} />
               <Route path="/cart" element={<CartScreen />} />
+              <Route path='/profile' element={<ProfileScreen />} />
             </Routes>
           </Container>
         </main>
