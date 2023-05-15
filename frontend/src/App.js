@@ -9,8 +9,6 @@ import CartScreen from "./screens/CartScreen";
 import LoginScreen from './screens/LoginScreen';
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
-//import LoginScreen later! 
-
 
 
 

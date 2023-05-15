@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModel.js'
-import generateToken from '..utils/generateToken.js';
+import generateToken from '../utils/generateToken.js';
 
 export const authUser = asyncHandler(async (req, res) => {
     const {email, password} = req.body //this means both of these are being deconstructed from the body in one line

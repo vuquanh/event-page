@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
-import { LinkContainer } from "../components/FormContainer";
+import { LinkContainer } from "react-router-bootstrap";
 import { logout } from "../actions/userActions";
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
               </NavDropdown>
             )
             : (
-                <LinkContainer to="login">
+                <LinkContainer to="/login">
                   <Nav.Link><i className='fas fa-user'></i> Sign In</Nav.Link>
                 </LinkContainer>
 
