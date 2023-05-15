@@ -7,7 +7,7 @@ function CarouselFadeExample({ items }) {
 
   return (
     <Carousel fade className="carousel-container">
-      {items.map((item) => (
+      {items?.map((item) => (
   
         <Carousel.Item>
          
