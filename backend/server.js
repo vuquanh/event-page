@@ -14,7 +14,7 @@ connectDB() //this will connect to database and will print out the host if there
 //here
 app.use(express.json())
 app.use('/api/events', productRoutes) // this says anytime you see products in a url, go to productRoutes.
-app.use('api/users', userRoutes)
+app.use('/api/users', userRoutes) //it was missing '/'
 
 app.use('/api/events', productRoutes)
 app.use(notFound)

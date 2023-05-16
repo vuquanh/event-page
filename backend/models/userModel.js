@@ -27,7 +27,7 @@ const userSchema = mongoose.Schema({
 //anyone that uses this model will have this method available to call (benefit of putting here instead of userController)
 userSchema.methods.matchPassword = async function
 (enteredPassword) {
-    bcrypt.compare(enteredPassword, this.password) //this is current schema         
+   return bcrypt.compare(enteredPassword, this.password) //this is current schema         
 }
 
 const User = mongoose.model('users', userSchema)
