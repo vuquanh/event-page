@@ -5,7 +5,7 @@ import {
   USER_LOGIN_SUCCESS,
   USER_LOGOUT
 } from "../constants/userConstants";
-import { configureStore } from "@reduxjs/toolkit";
+// import { configureStore } from "@reduxjs/toolkit";
 
 export const login = (email, password) => async (dispatch) => {
   try {

@@ -14,7 +14,7 @@ const HomeScreen = () => {
 
   const dispatch = useDispatch();
   const eventList = useSelector((state) => state.eventList);
-  // console.log('state', eventList)
+  console.log('state', eventList)
   const { loading, error, events } = eventList;
 
   useEffect(() => {
