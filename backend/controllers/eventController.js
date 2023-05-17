@@ -5,7 +5,6 @@ import asyncHandler from 'express-async-handler';
 
 export const getEvents = asyncHandler(async(req, res) => {//have to wrap in asyncHandler function bc Express is an old library that doesnt have async/await capabilities
     const events = await Event.find({}) //product refers to products collection in MongoDB
-    console.log(events)
     res.json(events)
 })
 
