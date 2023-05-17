@@ -8,7 +8,7 @@ import { EVENT_LIST_FAIL,
 export const eventListReducer = (state = {events: []}, action) => {
   switch (action.type){
     case EVENT_LIST_REQUEST:
-      return {loading: true, events: []}
+      return {loading: true}
     case EVENT_LIST_SUCCESS:
       return {loading: false, events: action.payload}
     case EVENT_LIST_FAIL:
