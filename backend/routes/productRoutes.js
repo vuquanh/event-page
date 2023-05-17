@@ -1,22 +1,19 @@
 import express from 'express'; 
-import Event from '../models/eventModel.js'; 
-import asyncHandler from 'express-async-handler'
+import { getEventById, getEvents } from '../controllers/eventController.js';
+
+
 
 const router = express.Router() //express is a big library than can do a lot of things. We just want the Router function which takes the URL and executes the correct API
 
-router.get('/', asyncHandler(async(req, res) => {//have to wrap in asyncHandler function bc Express is an old library that doesnt have async/await capabilities
-    const events = await Event.find({}) //product refers to products collection in MongoDB
-    res.json(events)
-}))
+//*anytime we write routes, write comments
+//@desc     Fetch all events
+//@route    GET /api/events/
+//@access   public
+router.get('/', getEvents)
 
-router.get('/:id', asyncHandler(async(req, res) => {
-    const event = await Event.findById(req.params.id)
-    if (event) {
-    res.json(event)
-  } else {
-    res.status(404)
-    throw new Error('Product not found')
-  } 
-}))
+//@desc     Fetch single events by id
+//@route    GET /api/products/:id
+//@access   public
+router.get('/:id', getEventById)
 
 export default router
