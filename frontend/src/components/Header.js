@@ -25,11 +25,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-<<<<<<< Updated upstream
-              <LinkContainer>
-=======
-              <LinkContainer to="/cart">
->>>>>>> Stashed changes
+              <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i class="fa-solid fa-cart-plus"></i>Cart
                 </Nav.Link>
