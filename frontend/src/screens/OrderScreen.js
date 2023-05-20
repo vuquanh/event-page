@@ -57,8 +57,8 @@ const OrderScreen = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      <h1>Thank you for your order!</h1>
-      <h2>Order Number: {order._id}</h2>
+      {/* <h1>Thank you for your order!</h1> */}
+      <h1>Order Number: {order._id}</h1>
 
       <Row>
         <Col md={8}>
