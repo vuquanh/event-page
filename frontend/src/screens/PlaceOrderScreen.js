@@ -14,6 +14,7 @@ const PlaceOrderScreen = () => {
     const updatedCart = {}
   
      //   Calculate prices
+
     const addDecimals = (num) => { //this function will round first then dividing by 100 adds back in decimal point
       return (Math.round(num * 100) / 100).toFixed(2)
     }
@@ -22,6 +23,15 @@ const PlaceOrderScreen = () => {
       cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
     )
     updatedCart.shippingPrice = addDecimals(updatedCart.itemsPrice > 100 ? 0 : 10) //if cart is over $100, shipping is free, otherwise $10 
+
+    const addDecimals = (num) => {
+      return (Math.round(num * 100) / 100).toFixed(2)
+    }
+  
+    updatedCart.itemsPrice = addDecimals(
+      cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+    )
+    updatedCart.shippingPrice = addDecimals(updatedCart.itemsPrice > 100 ? 0 : 100)
     updatedCart.taxPrice = addDecimals(Number((0.15 * updatedCart.itemsPrice).toFixed(2)))
     updatedCart.totalPrice = (
       Number(updatedCart.itemsPrice) +
@@ -29,11 +39,17 @@ const PlaceOrderScreen = () => {
       Number(updatedCart.taxPrice)
     ).toFixed(2)
   
+
      //when the place order button is pressed it does this:
     const orderCreate = useSelector((state) => state.orderCreate)
     const { order, success, error } = orderCreate
   
     useEffect(() => { //if an order was already successful, should skip to the order
+
+    const orderCreate = useSelector((state) => state.orderCreate)
+    const { order, success, error } = orderCreate
+  
+    useEffect(() => {
       if (success) {
         navigate(`/order/${order._id}`)
       }
