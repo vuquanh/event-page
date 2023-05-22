@@ -41,6 +41,7 @@ import {
     switch (action.type) {
       case ORDER_DETAILS_REQUEST:
         return {
+
           ...state, //copies data so there is a trail 
           loading: true,
         }

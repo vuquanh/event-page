@@ -11,6 +11,7 @@ import {
   ORDER_PAY_REQUEST, 
 } from '../constants/orderConstants'
 
+
 //when you press place order button, it will perform this action
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -28,6 +29,13 @@ export const createOrder = (order) => async (dispatch, getState) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${userInfo.token}`, 
+
+    } = getState()
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -82,6 +90,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
   }
 }
 
+
 //get orderID and result from paypal. Is a PUT so API routes with body of payment result
 export const payOrder = (orderId, paymentResult) => async (
   dispatch,
@@ -103,7 +112,9 @@ export const payOrder = (orderId, paymentResult) => async (
       },
     }
 
+
     const { data } = await axios.put( 
+    const { data } = await axios.put(
       `/api/orders/${orderId}/pay`,
       paymentResult,
       config
