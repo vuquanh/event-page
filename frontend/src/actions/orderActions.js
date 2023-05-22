@@ -9,7 +9,7 @@ import {
   ORDER_PAY_FAIL,
   ORDER_PAY_SUCCESS,
   ORDER_PAY_REQUEST, 
-} from '../constants/orderConstants'
+} from '../constants/orderConstant'
 
 
 //when you press place order button, it will perform this action
@@ -23,6 +23,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState() //read the token info from the state
   
+    console.log("GetState() from OrderActions.js:", getState().userLogin)
 
   //previously did this in postman, now in code. This is POST call
     const config = { 

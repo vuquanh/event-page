@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { getOrderDetails, payOrder } from "../actions/orderActions";
-import { ORDER_PAY_RESET } from "../constants/orderConstants";
+import { ORDER_PAY_RESET } from "../constants/orderConstant";
 
 const OrderScreen = () => {
   const params = useParams();
@@ -30,7 +30,7 @@ const OrderScreen = () => {
     };
 
     //Calculating the price of all the orders, not including shipping, taxes fees.
-    updatedOrder.itemsPrice = addDecimals(
+    updatedOrder.itemsFee = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.fee * item.qty, 0)
     );
   }
@@ -141,7 +141,7 @@ const OrderScreen = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>${updatedOrder.itemsPrice}</Col>
+                  <Col>${updatedOrder.itemsFee}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
@@ -159,7 +159,7 @@ const OrderScreen = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>${order.totalFee}</Col>
+                  <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
@@ -180,7 +180,7 @@ const OrderScreen = () => {
                                 {
                                     amount: {
                                         currency_code: 'USD',
-                                        value: order.totalFee
+                                        value: order.totalPrice
                                     }
                                 }
                             ]

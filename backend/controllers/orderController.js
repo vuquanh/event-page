@@ -6,7 +6,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
         orderItems,
         shippingAddress,
         paymentMethod, 
-        itemsPrice,
+        itemsFee,
         taxPrice, 
         shippingPrice, 
         totalPrice
@@ -21,12 +21,12 @@ if (orderItems && orderItems.length === 0) {
         user: req.user._id,
         shippingAddress, 
         paymentMethod, 
-        itemsPrice, 
+        itemsFee, 
         taxPrice, 
         shippingPrice, 
         totalPrice
     })
-    const createdOrder = await order.save //creates a new record into mongoDb
+    const createdOrder = await order.save() //creates a new record into mongoDb
     res.status(201).json(createdOrder) //201 means created
     }
 })

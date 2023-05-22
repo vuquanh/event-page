@@ -18,13 +18,13 @@ const PlaceOrderScreen = () => {
     return (Math.round(num * 100) / 100).toFixed(2)
   }
 
-  updatedCart.itemsPrice = addDecimals(
-    cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+  updatedCart.itemsFee = addDecimals(
+    cart.cartItems.reduce((acc, item) => acc + item.fee * item.qty, 0)
   )
-  updatedCart.shippingPrice = addDecimals(updatedCart.itemsPrice > 100 ? 0 : 10)
-  updatedCart.taxPrice = addDecimals(Number((0.15 * updatedCart.itemsPrice).toFixed(2)))
+  updatedCart.shippingPrice = addDecimals(updatedCart.itemsFee > 100 ? 0 : 10)
+  updatedCart.taxPrice = addDecimals(Number((0.15 * updatedCart.itemsFee).toFixed(2)))
   updatedCart.totalPrice = (
-    Number(updatedCart.itemsPrice) +
+    Number(updatedCart.itemsFee) +
     Number(updatedCart.shippingPrice) +
     Number(updatedCart.taxPrice)
   ).toFixed(2)
@@ -44,7 +44,7 @@ const PlaceOrderScreen = () => {
         orderItems: cart.cartItems,
         shippingAddress: cart.shippingAddress,
         paymentMethod: cart.paymentMethod,
-        itemsPrice: updatedCart.itemsPrice,
+        itemsFee: updatedCart.itemsFee,
         shippingPrice: updatedCart.shippingPrice,
         taxPrice: updatedCart.taxPrice,
         totalPrice: updatedCart.totalPrice,
@@ -92,12 +92,12 @@ const PlaceOrderScreen = () => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link to={`/event/${item.event}`}>
                             {item.name}
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ${item.fee} = ${item.qty * item.fee}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -116,7 +116,7 @@ const PlaceOrderScreen = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>${updatedCart.itemsPrice}</Col>
+                  <Col>${updatedCart.itemsFee}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>

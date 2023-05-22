@@ -12,11 +12,11 @@ router.route('/').post(protect, addOrderItems) //we go to addorderitems after ve
 // @desc    lookup new order
 // @route   GET /api/orders/:id
 // @access  private
-router.route('/:id').get(protect, addOrderById) //in controller
+router.route('/:id').get(protect, getOrderById) //in controller
  
 // @desc    update order to paid
 // @route   PUT /api/orders/:id 
 // @access  private
-router.route('/:id/pay').put(protect, updateOrdertoPaid)
+router.route('/:id/pay').put(protect, updateOrderToPaid)
 
 export default router
