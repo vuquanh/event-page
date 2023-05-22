@@ -50,10 +50,7 @@ const updateOrderToPaid = asyncHandler(async(req, res) => {
         order.isPaid = true, //marks column as true
         order.paidAt = Date.now()
         order.paymentResult = { //info get from paypal
-            id: req.body.id, 
-            status: req.body.status, 
-            update_time: req.body.update_time,
-            email_address: req.body.email_address
+            id: req.body.orderID,
         }
 
         const updatedOrder = await order.save()
