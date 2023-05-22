@@ -4,6 +4,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
@@ -15,6 +16,7 @@ connectDB() //this will connect to database and will print out the host if there
 app.use(express.json())
 app.use('/api/events', productRoutes) // this says anytime you see products in a url, go to productRoutes.
 app.use('/api/users', userRoutes)
+app.use('/api/orders', orderRoutes)
 
 app.use('/api/events', productRoutes)
 app.get('/api/config/paypal', (req, res) => 
