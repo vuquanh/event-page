@@ -81,3 +81,24 @@ footer {
 
 }
 
+.badge {
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 13px;
+    background: rgb(52, 163, 200);
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+

@@ -6,8 +6,13 @@ import { logout } from "../actions/userActions";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin); //check here later
+  const userLogin = useSelector((state) => state.userLogin); 
   const { userInfo } = userLogin;
+
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
+  const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0)
+  console.log(totalCartItems)
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -20,6 +25,7 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand>
               <img src="picturetopeople_logo.png" id="logo" alt="Brand logo" />
+             
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,7 +33,8 @@ const Header = () => {
             <Nav className="ms-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i class="fa-solid fa-cart-plus"></i>Cart
+                  <i class="fa-solid fa-cart-plus"></i><span class='badge badge-warning' id='lblCartCount'>{totalCartItems}</span>
+                   Cart
                 </Nav.Link>
               </LinkContainer>
             {userInfo? (
