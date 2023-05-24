@@ -31,8 +31,8 @@ const ProfileScreen = () => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-  const id = userInfo._id;
-  console.log("id", id);
+  // const id = userInfo._id;
+  // console.log("id", id);
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
@@ -42,9 +42,12 @@ const ProfileScreen = () => {
   const { isLoading, historyOrder, isError } = orderHistory;
   console.log("orderHistory:", orderHistory);
 
+  //This is for formatting Date.
+  const dateFormat = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'})
+
   useEffect(() => {
-    //this is for getting order history of the logged in user.
-    dispatch(getHistoryOrder(id));
+    //this is for getting order history of the logged-in user.
+    dispatch(getHistoryOrder(userInfo._id));
 
     if (!userInfo) {
       navigate("/login");
@@ -56,7 +59,7 @@ const ProfileScreen = () => {
         setEmail(user.email);
       }
     }
-  }, [dispatch, userInfo, user, navigate, id]);
+  }, [dispatch, userInfo, user, navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -127,7 +130,10 @@ const ProfileScreen = () => {
           <Message>No Order</Message>
         ) : (
           <>
-            {historyOrder.map((item, index) => (
+            {historyOrder.map((item, index) => {
+              //This only shows the orders that are already paid by the customer. 
+              if(item.isPaid) {
+              return (
               <ListGroup>
                 <div key={index}>
                   <h2 className="mt-4">ORDER ID: {item._id}</h2>
@@ -152,15 +158,22 @@ const ProfileScreen = () => {
                         </Row>
                       </ListGroup.Item>
                     ))}
-                    <ListGroup.Item className="text-end">
-                      {/* <p>Shipping: {item.shippingPrice}</p>
+                    <ListGroup.Item className="">
+                      <Row >
+                        <Col>
+                          <p>Paid At: {item.paidAt}</p>
+                        </Col>
+                        <Col>
+                          {/* <p>Shipping: {item.shippingPrice}</p>
                       <p>Tax: {item.taxPrice}</p> */}
-                      <p>Total: ${item.totalPrice}</p>
+                          <p className="text-end">Total: ${item.totalPrice}</p>
+                        </Col>
+                      </Row>
                     </ListGroup.Item>
                   </ListGroup>
                 </div>
-              </ListGroup>
-            ))}
+              </ListGroup>)}
+})}
           </>
         )}
       </Col>

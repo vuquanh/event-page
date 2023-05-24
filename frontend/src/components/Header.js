@@ -9,10 +9,12 @@ const Header = () => {
   const userLogin = useSelector((state) => state.userLogin); 
   const { userInfo } = userLogin;
 
+  const orderCreate = useSelector((state) => state.orderCreate)
+  const { order, success, error } = orderCreate
+
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
-  const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0)
-
+  const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0) 
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -33,7 +35,11 @@ const Header = () => {
             <Nav className="ms-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i class="fa-solid fa-cart-plus"></i><span class='badge badge-warning' id='lblCartCount'>{totalCartItems}</span>
+                  <i class="fa-solid fa-cart-plus"></i>
+
+                {totalCartItems === 0 ? null 
+                : ( <span class='badge badge-warning' id='lblCartCount'>{totalCartItems}</span>)}
+             
                    Cart
                 </Nav.Link>
               </LinkContainer>

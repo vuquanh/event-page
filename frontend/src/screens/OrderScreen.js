@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -57,7 +57,6 @@ const OrderScreen = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      {/* <h1>Thank you for your order!</h1> */}
       <h1>Order Number: {order._id}</h1>
 
       <Row>
@@ -193,6 +192,7 @@ const OrderScreen = () => {
                         return actions.order.capture().then(function () {
                             console.log("Paypal Data:", data)
                             dispatch(payOrder(orderId, data))
+                          
                         })
                     }}
                    />

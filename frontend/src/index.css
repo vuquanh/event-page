@@ -95,7 +95,7 @@ footer {
 }
 #lblCartCount {
     font-size: 13px;
-    background: rgb(52, 163, 200);
+    background: rgb(75, 163, 192);
     color: #fff;
     padding: 0 5px;
     vertical-align: top;
@@ -105,4 +105,9 @@ footer {
 
 .profileText {
   color: rgb(145, 75, 52);
+}
+
+.homeTitle {
+  font-weight: bold;
+  color: rgb(74, 74, 85);
 }
