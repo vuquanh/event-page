@@ -14,7 +14,10 @@ const Header = () => {
 
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
-  const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0) 
+  let totalCartItems;
+  if(cartItems) {
+  totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0) 
+}
 
   const logoutHandler = () => {
     dispatch(logout());

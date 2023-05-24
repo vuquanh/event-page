@@ -1,11 +1,22 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from 'react-redux'
+import { CART_RESET } from "../constants/cartConstants";
 
 const OrderConfirmation = () => {
+
   const orderInfo = useSelector((state) => state.orderCreate)
   const {data, error} = orderInfo
-  console.log('paypal data:', data) 
+  // console.log('paypal data:', data) 
+
+  const dispatch = useDispatch()
+
+  const cartItems = useSelector((state) => state.cart)
+  console.log(cartItems)
+
+  useEffect(() => {
+    dispatch({type: CART_RESET})
+  }, [dispatch])
 
   return (
     <Container className="h-100">
