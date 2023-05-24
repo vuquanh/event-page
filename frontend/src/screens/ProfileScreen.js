@@ -16,6 +16,7 @@ import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { getHistoryOrder } from "../actions/orderActions";
 import { identity } from "lodash";
 
+
 const ProfileScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -136,7 +137,9 @@ const ProfileScreen = () => {
               return (
               <ListGroup>
                 <div key={index}>
-                  <h2 className="mt-4">ORDER ID: {item._id}</h2>
+                 <Link to={`/order/${item._id}`}>
+                  <h2 className="mt-4 profileOrderId">ORDER ID: {item._id}</h2>
+                  </Link>
                   <ListGroup>
                     {item.orderItems.map((item, index) => (
                       <ListGroup.Item>

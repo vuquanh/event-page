@@ -1,6 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModel.js'
 import generateToken from '../utils/generateToken.js';
+import bcrypt from 'bcryptjs'
 
 const authUser = asyncHandler(async (req, res) => {
     const {email, password} = req.body //this means both of these are being deconstructed from the body in one line
@@ -59,7 +60,10 @@ const authUser = asyncHandler(async (req, res) => {
         }
       })
       const registerUser = asyncHandler(async (req, res) => {
-        const { name, email, password } = req.body
+        let { name, email, password } = req.body
+
+        bcrypt.hashSync(password, 10)
+  
       
         const userExists = await User.findOne({ email })
       

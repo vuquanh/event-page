@@ -27,7 +27,7 @@ const HomeScreen = () => {
 {/* <Row>
   <Col xl={3}></Col>
 </Row> */}
-<h1 className="homeTitle mt-5">Events Near You</h1>
+<h1 className="title mt-5">Events Near You</h1>
 
 {loading ? (
   <Loader />

@@ -39,7 +39,7 @@ const CartScreen = () => {
   return (
     <Row>
       <Col md={8}>
-    <h1>Shopping Cart</h1>
+    <h1 className='mt-5 title'>Shopping Cart</h1>
     {cartItems.length === 0? (
       <Message>
         Your cart is empty <Link to="/">Go Back</Link>

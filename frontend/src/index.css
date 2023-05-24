@@ -107,7 +107,12 @@ footer {
   color: rgb(145, 75, 52);
 }
 
-.homeTitle {
+.title {
   font-weight: bold;
   color: rgb(74, 74, 85);
+}
+
+
+.profileOrderId:hover {
+  color: #e95420
 }

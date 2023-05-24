@@ -5,6 +5,7 @@ import {
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
   ORDER_DETAILS_FAIL,
+  ORDER_DETAILS_RESET,
   ORDER_PAY_REQUEST,
   ORDER_PAY_FAIL,
   ORDER_PAY_SUCCESS,
@@ -56,6 +57,9 @@ export const orderDetailsReducer = (
         loading: false,
         error: action.payload,
       };
+      //resetting the orderDetails
+    case ORDER_DETAILS_RESET:
+      return {};
     default:
       return state;
   }
