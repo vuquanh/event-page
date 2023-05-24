@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,10 +8,12 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { getOrderDetails, payOrder } from "../actions/orderActions";
 import { ORDER_PAY_RESET } from "../constants/orderConstant";
+// import { ORDER_DETAILS_RESET } from "../constants/orderConstant";
 
 const OrderScreen = () => {
   const params = useParams();
   const orderId = params.id;
+  const navigate = useNavigate()
 
   const dispatch = useDispatch();
 
@@ -20,8 +22,14 @@ const OrderScreen = () => {
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
 
+
+
   const orderPay = useSelector((state) => state.orderPay);
   const { loading: loadingPay, success: successPay } = orderPay;
+  
+  // console.log("orderPay:", orderPay)
+
+
 
   if (!loading) {
     //Calculate prices
@@ -30,6 +38,7 @@ const OrderScreen = () => {
     };
 
     //Calculating the price of all the orders, not including shipping, taxes fees.
+ 
     updatedOrder.itemsFee = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.fee * item.qty, 0)
     );
@@ -42,6 +51,12 @@ const OrderScreen = () => {
       setClient_Id(clientId);
     };
     addPayPalScript();
+
+    //This compares if order._id and orderId are the same and if not, go get a new data based on orderId
+ if (order && order._id !== orderId) {
+// dispatch({type: ORDER_DETAILS_RESET})
+dispatch(getOrderDetails(orderId))
+ }
 
     //There is no order or the payment has been alrady paid.
     //This is for when a user clicked "pay" again accidentally
@@ -57,8 +72,7 @@ const OrderScreen = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      {/* <h1>Thank you for your order!</h1> */}
-      <h1>Order Number: {order._id}</h1>
+      <h1 className="mt-5 title">Order Number: {order._id}</h1>
 
       <Row>
         <Col md={8}>
@@ -131,6 +145,9 @@ const OrderScreen = () => {
               )}
             </ListGroup.Item>
           </ListGroup>
+          <Button  className='mt-4 p-2'  type='button' onClick={() => navigate(-1)}> 
+      Go Back
+    </Button> 
         </Col>
         <Col md={4}>
           <Card>
@@ -193,6 +210,8 @@ const OrderScreen = () => {
                         return actions.order.capture().then(function () {
                             console.log("Paypal Data:", data)
                             dispatch(payOrder(orderId, data))
+                            navigate("/order/confirmation")
+                          
                         })
                     }}
                    />

@@ -9,6 +9,9 @@ import {
   ORDER_PAY_FAIL,
   ORDER_PAY_SUCCESS,
   ORDER_PAY_REQUEST, 
+  ORDER_HISTORY_REQUEST,
+  ORDER_HISTORY_SUCCESS,
+  ORDER_HISTORY_FAIL
 } from '../constants/orderConstant'
 
 
@@ -23,7 +26,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState() //read the token info from the state
   
-    console.log("GetState() from OrderActions.js:", getState().userLogin)
+    // console.log("GetState() from OrderActions.js:", getState().userLogin)
 
   //previously did this in postman, now in code. This is POST call
     const config = { 
@@ -115,6 +118,8 @@ export const payOrder = (orderId, paymentResult) => async (
       type: ORDER_PAY_SUCCESS,
       payload: data,
     })
+
+    
   } catch (error) {
     dispatch({
       type: ORDER_PAY_FAIL,
@@ -125,3 +130,41 @@ export const payOrder = (orderId, paymentResult) => async (
     })
   }
 } 
+
+//This is for getting order history for the login user in ProfileScreen.js
+export const getHistoryOrder = (id) => async (dispatch, getState) => {
+        try {
+          dispatch({type: ORDER_HISTORY_REQUEST})
+
+          const {
+            userLogin: { userInfo },
+          } = getState()
+      
+          const config = {
+            headers: {
+              Authorization: `Bearer ${userInfo.token}`,
+            },
+          }
+      
+          const { data } = await axios.get(`/api/orders/history/${id}`, config)
+      
+          dispatch({
+            type: ORDER_HISTORY_SUCCESS,
+            payload: data,
+
+          })
+
+          
+    // localStorage.setItem('orderHistoryItems', JSON.stringify(getState().orderHistory.pastOrder))
+
+        }  catch (error) {
+          dispatch({
+            type: ORDER_HISTORY_FAIL,
+            payload:
+              error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message,
+          })
+        }
+}
+
