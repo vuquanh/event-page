@@ -152,6 +152,9 @@ export const getHistoryOrder = (id) => async (dispatch, getState) => {
 
           })
 
+          
+    // localStorage.setItem('orderHistoryItems', JSON.stringify(getState().orderHistory.pastOrder))
+
         }  catch (error) {
           dispatch({
             type: ORDER_HISTORY_FAIL,

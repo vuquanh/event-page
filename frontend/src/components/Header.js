@@ -12,7 +12,7 @@ const Header = () => {
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
   const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0)
-  console.log(totalCartItems)
+
 
   const logoutHandler = () => {
     dispatch(logout());

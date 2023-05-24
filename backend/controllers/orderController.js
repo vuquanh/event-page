@@ -63,8 +63,9 @@ const updateOrderToPaid = asyncHandler(async(req, res) => {
 
 const getHistoryById = asyncHandler(async(req, res) => {
 
-    const history = await Order.findById({user: req.params.id})
-    if(history) {
+    const history = await Order.find({user: req.params.id})
+
+    if(history.length !== 0) {
         res.json(history)
     } else {
         res.status(404)

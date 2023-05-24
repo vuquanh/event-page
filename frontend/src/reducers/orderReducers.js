@@ -88,11 +88,11 @@ export const orderPayReducer = (state = {}, action) => {
 export const orderHistoryReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_HISTORY_REQUEST:
-      return { loading: true };
+      return { isLoading: true };
     case ORDER_HISTORY_SUCCESS:
-      return { loading: false, order: action.payload };
+      return { isLoading: false, historyOrder: action.payload };
     case ORDER_HISTORY_FAIL:
-      return { loading: false, error: action.payload };
+      return { isLoading: false, isError: action.payload };
     default:
       return state;
   }
