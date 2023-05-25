@@ -19,12 +19,9 @@ main {
   background-color: rgb(230, 230, 230);
 }
 
-.carousel {
-  min-height: 20vh;
-}
 
 h2{
-  color: rgb(66, 66, 105);
+  color: 2f318b;
 }
 
 h3{
@@ -37,13 +34,15 @@ h3{
 }
 
 h4{
-  color: #808096;
+  color: #354584;
 }
 
 
 #logo {
-  height: 50px;
-  margin-left: -10px;
+  height: 35px;
+  float: left;
+  position: relative;
+  
 }
 
 
@@ -56,9 +55,6 @@ footer {
   color: white;
 }
 
-.carousel-container {
-  margin: 20px;
-}
 
 .card-height {
   min-height: 410px;
@@ -79,5 +75,63 @@ footer {
   border-radius: 8px;
   font-weight: bold;
 
+}
+
+.badge {
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 13px;
+    background: rgb(75, 163, 192);
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+
+
+.profileText {
+  color: #2f318b;
+}
+
+
+.title {
+  font-weight: bold;
+  color: 2f318b;
+}
+
+
+.profileOrderId:hover {
+  color: #e95420
+}
+
+.thankyou {
+  font-size: 4rem;
+}
+
+.thankbox {
+  background-color: #2445c8;
+  border-radius: 20px;
+  width: 100%;
+  height: 40%;
+}
+
+.thankbox > h1 {
+  color: #e95420;
+  ;
+}
+
+.thankbox > p {
+  font-size: 2rem;
+  color: #444140;
 }
 
