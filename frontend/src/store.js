@@ -18,7 +18,7 @@ import {
   orderPayReducer,
 } from "./reducers/orderReducers";
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   eventList: eventListReducer,
   eventDetails: eventDetailsReducer,
   cart: cartReducer,
@@ -32,6 +32,18 @@ const rootReducer = combineReducers({
   //For receiving order history for profile page.
   orderHistory: orderHistoryReducer,
 });
+
+
+const rootReducer = (state, action) => {
+  if(action.type === 'USER_LOGOUT') {
+    localStorage.clear();
+    return appReducer(undefined, action)
+  
+  }
+  return appReducer(state, action)
+}
+
+
 const cartItemsFromStorage = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))
   : [];

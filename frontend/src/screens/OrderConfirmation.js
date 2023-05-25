@@ -17,7 +17,7 @@ const OrderConfirmation = () => {
 
   const orderDetails = useSelector((state) => state.orderDetails)
   const {order} = orderDetails
-  console.log(order._id)
+  
 
   useEffect(() => {
     dispatch({type: CART_RESET})
