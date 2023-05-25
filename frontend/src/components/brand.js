@@ -10,9 +10,6 @@ function Brand() {
             <img
               alt=""
               src="/picturetopeople.logo.png"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
             />{' '}
             React Bootstrap
           </Navbar.Brand>
@@ -22,4 +19,4 @@ function Brand() {
   );
 }
 
-export default Brand;
+export default Brand
