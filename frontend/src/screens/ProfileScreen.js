@@ -55,8 +55,10 @@ const ProfileScreen = () => {
   console.log("orderHistory:", orderHistory);
 
    useEffect(() => {
+    if(userInfo) {
     //this is for getting order history of the logged-in user.
     dispatch(getHistoryOrder(userInfo._id));
+  }
 
     if (!userInfo) {
       navigate("/login");

@@ -102,7 +102,7 @@ const RegisterScreen = () => {
 
       <Row className='py-3'>
         <Col>
-        your new salt: {salt}
+        {/* your new salt: {salt} */}
           Have an Account?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
             Login
