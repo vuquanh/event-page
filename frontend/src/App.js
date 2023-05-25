@@ -42,7 +42,7 @@ const App = () => {
               <Route path='/order/:id' element={<OrderScreen />}/>
               <Route path='/order/confirmation' element={<OrderConfirmation />}/>
 
-            </Routes>
+              </Routes>
           </Container>
         </main>
         <Footer />

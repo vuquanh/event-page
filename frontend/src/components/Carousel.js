@@ -17,8 +17,9 @@ function CarouselFadeExample({ items }) {
             
             src={item.image}  // changed here 
             alt={`${item.name}`}
-            style={{borderRadius: "20px"}}
+            style={{height: "50vh"}}
           />
+          <br></br>
           </ Link>
           {/* <Carousel.Caption>
             <h2 style={{color: "red"}}>{item.name}</h2>
