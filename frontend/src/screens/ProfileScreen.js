@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {
   Form,
@@ -15,14 +15,25 @@ import Loader from "../components/Loader";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { getHistoryOrder } from "../actions/orderActions";
 import { identity } from "lodash";
+import bcrypt from 'bcryptjs'
 
+
+
+//this is for encrypting password
+// example =>  $2a$10$CwTycUXWue0Thq9StjUM0u => to be added always to the password hash
+const salt = bcrypt.genSaltSync(10)
 
 const ProfileScreen = () => {
+
+  const passwordInputRef = useRef()
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
+
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -43,12 +54,11 @@ const ProfileScreen = () => {
   const { isLoading, historyOrder, isError } = orderHistory;
   console.log("orderHistory:", orderHistory);
 
-  //This is for formatting Date.
-  const dateFormat = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'})
-
-  useEffect(() => {
+   useEffect(() => {
+    if(userInfo) {
     //this is for getting order history of the logged-in user.
     dispatch(getHistoryOrder(userInfo._id));
+  }
 
     if (!userInfo) {
       navigate("/login");
@@ -63,11 +73,15 @@ const ProfileScreen = () => {
   }, [dispatch, userInfo, user, navigate]);
 
   const submitHandler = (e) => {
+    const password = passwordInputRef.current.value
+    const hashedPassword = bcrypt.hashSync(password, salt)
+    console.log(hashedPassword)
+
     e.preventDefault();
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
     } else {
-      dispatch(updateUserProfile({ id: user._id, name, email, password }));
+      dispatch(updateUserProfile({ id: user._id, name, email, password: hashedPassword }));
     }
   };
 
@@ -105,8 +119,9 @@ const ProfileScreen = () => {
             <Form.Control
               type="password"
               placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              ref = {passwordInputRef}
+              // value={password}
+              // onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 

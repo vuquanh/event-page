@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { logout } from "../actions/userActions";
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin); 
   const { userInfo } = userLogin;
@@ -20,6 +23,8 @@ const Header = () => {
 }
 
   const logoutHandler = () => {
+    //when you logout it should go back to the main page. 
+    navigate('/')
     dispatch(logout());
   };
 

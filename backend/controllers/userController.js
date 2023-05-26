@@ -35,9 +35,9 @@ const authUser = asyncHandler(async (req, res) => {
         }
       })
       
-      const updateUserProfile = asyncHandler(async (req, res) => {
+      const updateUserProfile = asyncHandler(async (req, res) => {  
+
         const user = await User.findById(req.user._id)
-      
         if (user) {
           user.name = req.body.name || user.name
           user.email = req.body.email || user.email
@@ -59,6 +59,7 @@ const authUser = asyncHandler(async (req, res) => {
           throw new Error('User not found')
         }
       })
+
       const registerUser = asyncHandler(async (req, res) => {
         let { name, email, password } = req.body
 
