@@ -2,11 +2,20 @@
 
 import express from 'express';
 import dotenv from 'dotenv';
+import path from 'path';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+
+const __dirname = path.resolve()
+if (process.env.NODE_ENVIRONMENT === 'production'){
+    app.use(express.static(path.join(__dirname, '/frontend/build'))) 
+    app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    })   
+};
 
 const app = express(); //as soon as server runs, this starts first
 dotenv.config() //this command lets us have access to .env file
