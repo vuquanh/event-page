@@ -51,8 +51,8 @@ const EventScreen = () => {
             </p>
           </Col>
 
-          <Col md={3}>
-            <ListGroup variant="flush">
+          <Col md={3} className="mb-3">
+            <ListGroup variant="flush" >
               <ListGroup.Item>
                 <h2 className="eventScreen-EventName">{event.name}</h2>
               </ListGroup.Item>
@@ -70,7 +70,7 @@ const EventScreen = () => {
               <ListGroup.Item>Company: {event.company}</ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col md={3}>
+          <Col md={3} className="mb-3">
             <Card style={{ width: "18rem" }}>
               <ListGroup variant="flush">
            

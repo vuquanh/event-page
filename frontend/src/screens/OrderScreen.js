@@ -145,11 +145,11 @@ dispatch(getOrderDetails(orderId))
               )}
             </ListGroup.Item>
           </ListGroup>
-          <Button  className='mt-4 p-2'  type='button' onClick={() => navigate(-1)}> 
+          <Button  className='mt-4 p-2 mb-3'  type='button' onClick={() => navigate(-1)}> 
       Go Back
     </Button> 
         </Col>
-        <Col md={4}>
+        <Col md={4} className="mb-3">
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
