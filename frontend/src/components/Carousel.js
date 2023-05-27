@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import { Link } from 'react-router-dom';
-
+import {ObjectFit} from "react-bootstrap"
 
 function CarouselFadeExample({ items }) {
   // console.log("Carousel Items:", items);
@@ -17,7 +17,9 @@ function CarouselFadeExample({ items }) {
             
             src={item.image}  // changed here 
             alt={`${item.name}`}
-            style={{height: "50vh"}}
+            //With objectFit, the pic won't get distorted. 
+            style={{height: "55vh", objectFit: 'fill'}}
+            
           />
           <br></br>
           </ Link>

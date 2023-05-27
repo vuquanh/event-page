@@ -114,24 +114,9 @@ footer {
   color: #e95420
 }
 
-.thankyou {
-  font-size: 4rem;
-}
 
-.thankbox {
-  background-color: #2445c8;
-  border-radius: 20px;
-  width: 100%;
-  height: 40%;
-}
+/*For OrderConfirmation page */
 
-.thankbox > h1 {
-  color: #e95420;
-  ;
+.padding {
+  padding: 4rem
 }
-
-.thankbox > p {
-  font-size: 2rem;
-  color: #444140;
-}
-

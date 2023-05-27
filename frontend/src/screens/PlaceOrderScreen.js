@@ -107,7 +107,7 @@ const PlaceOrderScreen = () => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col md={4} className='mb-3'>
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
