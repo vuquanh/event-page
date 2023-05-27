@@ -90,7 +90,7 @@ const CartScreen = () => {
     }
     <Row>
       <Col>
-    <Button  className='mt-4 p-2'  type='button' onClick={() => navigate(-1)}> 
+    <Button  className='mt-4 p-2 mb-4'  type='button' onClick={() => navigate(-1)}> 
       Go Back
     </Button> 
     </Col>
